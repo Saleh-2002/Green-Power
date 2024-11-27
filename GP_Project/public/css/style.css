@@ -1,0 +1,433 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #27984155;
+    background-color: #DFEBE0;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #095733;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.navbar:hover {
+    background-color: #073d29;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-links li a:hover {
+    color: #00d1b2;
+    transform: translateY(-3px);
+}
+
+.cta {
+    background-color: white;
+    color: #007f5f;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-3px);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/page1.png') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideIn 1s forwards 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 350px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #007f5f;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.card h3:hover {
+    color: #007f5f;
+}
+
+.card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    transition: color 0.3s;
+}
+
+.card p:hover {
+    color: #555;
+}
+
+/* Hover Effect for Logout */
+.Logout i {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.Logout i:hover {
+    color: #00d1b2;
+    transform: scale(1.2);
+}
+
+/* Hero Section for Courses Page */
+.hero {
+    background: linear-gradient(to bottom, hsla(132, 38%, 30%, 0.596), hsla(0, 0%, 100%, 0.439)), url('page2.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: left;
+    padding: 4rem 2rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: slideIn 1s forwards 0.3s;
+}
+
+.hero h1 span {
+    font-weight: bold;
+    border-left: 4px solid white;
+    padding-left: 0.5rem;
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.hero h1 span:hover {
+    color: #00d1b2;
+    border-color: #00d1b2;
+}
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.info-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007f5f;
+}
+
+.info-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+.info-card p:hover {
+    color: #555;
+}
+
+.info-card .read-more {
+    text-decoration: none;
+    color: #007f5f;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.info-card .read-more:hover {
+    color: #005f47;
+    transform: translateY(-2px);
+}
+
+/* Project Cards */
+.project-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    flex: 1;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.project-card img:hover {
+    transform: scale(1.05);
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+.project-card p:hover {
+    color: #555;
+}
+
+.project-card .read-more {
+    text-decoration: none;
+    color: #007f5f;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.project-card .read-more:hover {
+    color: #005f47;
+    transform: translateY(-2px);
+}
+
+/* About Us Section */
+.about-hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/Flare.jpg') no-repeat center center/cover;
+    color: rgb(255, 255, 255);
+    padding: 4rem 2rem;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.about-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: slideIn 0.5s forwards 0.3s;
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.about-text strong {
+    font-weight: bold;
+    color: #00d1b2;
+    transition: color 0.3s;
+}
+
+.focus-areas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.focus-card {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.focus-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.focus-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #007f5f;
+}
+
+.focus-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    transition: color 0.3s;
+}
+
+.focus-card p:hover {
+    color: #555;
+}
+
+.vision-logo {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.vision-logo img {
+    max-width: 200px;
+    transition: transform 0.3s;
+}
+
+.vision-logo img:hover {
+    transform: rotate(10deg);
+}
+
+/* Active link in navbar */
+.nav-links .active {
+    font-weight: bold;
+    border-bottom: 2px solid white;
+}
+
+.box {
+    width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+.box input {
+    border: 1px solid #9b9b9b;
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    transition: all 0.15s;
+}
+
+.box input:hover {
+    border-color: #6136b1;
+    background-color: #e2e2e2;
+    outline: none;
+    animation: ease;
+}
+
+
+.Baby{
+    text-align: none;
+    color: #f7f8fc;
+}

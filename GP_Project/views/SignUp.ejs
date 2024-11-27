@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<style>
+
+</style>
+
+<body class="logIn">
+    <h1 style="
+    font-family: incursive; 
+    text-align: center; 
+    color: #37ad00; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);">
+        <em>Grenn Power</em>
+    </h1>
+    <div align="center">
+        <div class="box">
+            <h1 class="hed" style="color:black;">Sign Up</h1>
+            <form action="/SignUp" method="POST">
+                <input type="text" name="Email" id="Email" placeholder="Email" required>
+                <input type="number" name="PhoneNumber" id="PhoneNumber" placeholder="Phone Number" required>
+                <input type="text" id="username" placeholder="Username" name="Username" required><br>
+                <input type="password" id="password" placeholder="Password" name="Password" required><br>
+                <input type="submit" value="Submit">
+            </form>
+            <% if (locals.error) { %>
+                <h5 style="padding: 10px; text-align: center; color: red; background-color: rgba(255, 0, 0, 0.223); width: fit-content; border: 2px solid red; border-radius: 10px;">
+                    <%= locals.error %>
+                </h5>
+            <% } %>
+            
+            <p style="color:black;">Already have an account? <a href="/Login">Log In</a></p>
+
+        </div>
+
+    </div>
+    <script src="JavaScript/script.js"></script>
+
+</body>
+
+</html>

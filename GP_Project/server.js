@@ -3,11 +3,12 @@ import methodOverride from 'method-override';
 import bodyParser from 'body-parser';
 import session from 'express-session';
 import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
 import pg from 'pg';
 
 const print = console.log.bind();
 const app = express();
-const Port = 3000;
+const Port = process.env.PORT || 4000;
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -33,7 +34,10 @@ const db = new pg.Pool({
     password: process.env.DB_PASSWORD || "Saleh2002",
     port: 5432,
 });
-
+dotenv.config();
+//console.log(`DB Host: ${process.env.DB_HOST}`);
+//console.log(`DB User: ${process.env.DB_USER}`);
+//console.log(`DB Password: ${process.env.DB_PASSWORD}`);
 
 
 // Test DB connection

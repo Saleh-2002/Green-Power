@@ -14,19 +14,19 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use('/node_modules', express.static('node_modules'));
+dotenv.config();
 
 // Session setup
 app.use(session({
-    secret: 'GreenPower', // Change this to a more secure secret in production
+    secret: 'GreenPower', 
     resave: false,
     saveUninitialized: false,
     cookie: { 
-        secure: false, // Set to `true` in production with HTTPS
+        secure: false, 
         maxAge: 60 * 60 * 1000 // 1-hour session expiration
     }
 }));
 
-// PostgreSQL pool setup for better connection management
 const db = new pg.Pool({
     user: process.env.DB_USER || "postgres",
     host: process.env.DB_HOST || "localhost",
@@ -34,13 +34,9 @@ const db = new pg.Pool({
     password: process.env.DB_PASSWORD || "Saleh2002",
     port: 5432,
 });
-dotenv.config();
 //console.log(`DB Host: ${process.env.DB_HOST}`);
 //console.log(`DB User: ${process.env.DB_USER}`);
-//console.log(`DB Password: ${process.env.DB_PASSWORD}`);
-
-
-// Test DB connection
+//console.log(`DB Password: ${process.env.DB_PASSWORD}`); 
 db.connect()
     .then(() => print("Database connected successfully"))
     .catch(err => {
@@ -107,15 +103,14 @@ app.post("/SignUp", async (req, res) => {
     }
 });
 
-// Middleware to check if the user is logged in
+
 function isLoggedIn(req, res, next) {
     if (req.session.user) {
-        return next(); // User is logged in, continue to the route handler
+        return next();
     }
-    res.redirect("/Login"); // Redirect to login page if not logged in
+    res.redirect("/Login"); 
 }
 
-// Routes that require login
 app.get('/About', isLoggedIn, (req, res) => {
     res.render("About");
 });

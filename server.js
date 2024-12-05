@@ -10,7 +10,7 @@ const print = console.log.bind();
 const app = express();
 dotenv.config();
 
-const Port = process.env.PORT || 3000;
+const Port = 3000;
 
 // Set up view engine and static files
 app.set('view engine', 'ejs');
@@ -21,22 +21,37 @@ app.use('/node_modules', express.static('node_modules'));
 
 // Session setup
 app.use(session({
-    secret: process.env.SESSION_SECRET || 'GreenPower',
+    secret: 'GreenPower',
     resave: false,
     saveUninitialized: false,
     cookie: {
         secure: false,
         maxAge: 60 * 60 * 1000 // 1-hour session expiration
     }
-})); 
- 
+}));
+//^ Internal DB
 const db = new pg.Pool({
-    user: process.env.DB_USER || "postgres",
-    host: process.env.DB_HOST || "localhost",
-    database: process.env.DB_DATABASE || "postgres",
-    password: process.env.DB_PASSWORD || "Saleh2002",
-    port: process.env.DB_PORT || 5432,
+    user: "saleh_user",
+    host: "dpg-ct48a13tq21c7391u9fg-a",
+    database: "saleh",
+    password: "zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO",
+    port: 5432,
 });
+
+//^ External DB
+// const db = new pg.Pool({
+//     user: "saleh_user",
+//     host: "dpg-ct48a13tq21c7391u9fg-a.oregon-postgres.render.com",
+//     database: "saleh",
+//     password: "zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO",
+//     port: 5432,
+//     ssl: {
+//         rejectUnauthorized: false
+//     },
+//     idleTimeoutMillis: 30000
+// });
+//postgresql://saleh_user:zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO@dpg-ct48a13tq21c7391u9fg-a/saleh
+//postgresql://saleh_user:zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO@dpg-ct48a13tq21c7391u9fg-a.oregon-postgres.render.com/saleh
 
 db.connect()
     .then(() => print("Database connected successfully"))
@@ -82,7 +97,7 @@ app.post("/SignUp", async (req, res) => {
         const hashedPassword = await bcrypt.hash(Password, 10);
         const query = "INSERT INTO users (Email, Password, Phonenumber, Username) VALUES ($1, $2, $3, $4)";
         const values = [Email.toLowerCase(), hashedPassword, PhoneNumber, Username];
-        
+
         await db.query(query, values);
         res.redirect("/Login");
     } catch (error) {

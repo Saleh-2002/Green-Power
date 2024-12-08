@@ -9,24 +9,21 @@ import pg from 'pg';
 const print = console.log.bind();
 const app = express();
 dotenv.config();
-
 const Port = 3000;
 
-// Set up view engine and static files
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 app.use('/node_modules', express.static('node_modules'));
 
-// Session setup
 app.use(session({
     secret: 'GreenPower',
     resave: false,
     saveUninitialized: false,
     cookie: {
         secure: false,
-        maxAge: 60 * 60 * 1000 // 1-hour session expiration
+        maxAge: 60 * 60 * 1000 // node session 1-hour
     }
 }));
 //^ Internal DB
@@ -46,12 +43,10 @@ const db = new pg.Pool({
 //     password: "zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO",
 //     port: 5432,
 //     ssl: {
-//         rejectUnauthorized: false
+//         rejectUnauthorized: false 
 //     },
 //     idleTimeoutMillis: 30000
 // });
-//postgresql://saleh_user:zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO@dpg-ct48a13tq21c7391u9fg-a/saleh
-//postgresql://saleh_user:zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO@dpg-ct48a13tq21c7391u9fg-a.oregon-postgres.render.com/saleh
 
 db.connect()
     .then(() => print("Database connected successfully"))

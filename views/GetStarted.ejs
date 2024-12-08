@@ -1,3 +1,132 @@
 <%- include("partials/Header.ejs") %>
-<h1>hello</h1>
+    <title>Green Power - Get Started</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e6f5e6;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 1s forwards;
+        }
+
+        .section:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .section:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .section {
+                padding: 10px;
+            }
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .section {
+                margin: 15px 0;
+            }
+            .btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to Green Power</h1>
+            <p>Your journey to sustainable energy starts here!</p>
+        </div>
+
+        <div class="section">
+            <h2>Why Green Power?</h2>
+            <p>Green Power provides innovative solutions for harnessing renewable energy. By making eco-friendly choices, you contribute to a healthier planet.</p>
+        </div>
+
+        <div class="section">
+            <h2>How It Works</h2>
+            <p>Our platform connects you with solar, wind, and other renewable energy providers. Sign up to access resources and get started on your journey to clean energy.</p>
+        </div>
+
+        <div class="section">
+            <h2>Join Us Today</h2>
+            <p>Be part of the movement towards a greener world. Start with Green Power and make a difference!</p>
+            <a href="/Login" class="btn">Get Started</a>
+        </div>
+    </div>
+
 <%- include("partials/Footer.ejs") %>

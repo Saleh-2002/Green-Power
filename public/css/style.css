@@ -537,6 +537,21 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     margin-top: 100px;
 }
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+        padding: 15px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 100%;
+        padding: 10px;
+        margin-top: 30px;
+    }
+}
 
 .box input {
     border: 1px solid #9b9b9b;

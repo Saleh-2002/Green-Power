@@ -28,10 +28,10 @@ app.use(session({
 }));
 //^ Internal DB
 const db = new pg.Pool({
-    user: "saleh_user",
-    host: "dpg-ct48a13tq21c7391u9fg-a",
-    database: "saleh",
-    password: "zNbq9DV1Npuxo6BxfLjSHD9xZZJSacmO",
+    user: "green_powerdb_user",
+    host: "dpg-ctoui7dsvqrc73bbivjg-a",
+    database: "green_powerdb",
+    password: "uIAlGCShQiUTVXItxzE4ehNCmYjE07rG",
     port: 5432,
 });
 

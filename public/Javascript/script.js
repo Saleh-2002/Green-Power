@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Create a new nav-link with the login link
         const newNavLink = document.createElement('a');
-        newNavLink.href = '/Login';
-        newNavLink.textContent = 'Log in';
+        newNavLink.href = '/Home';
+        newNavLink.textContent = 'Next';
         newNavLink.classList.add('Baby');
 
         // Find the parent element where the new link should be added (e.g., .navbar)

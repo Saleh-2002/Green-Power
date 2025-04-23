@@ -20,7 +20,6 @@ document.querySelectorAll('.nav-links').forEach((Item, index) => {
     });
 });
 
-
 document.addEventListener('DOMContentLoaded', function () {
     if (window.location.pathname === '/') {
         // Remove the logout element if it exists

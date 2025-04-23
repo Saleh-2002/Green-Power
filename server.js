@@ -26,6 +26,7 @@ app.use(session({
         maxAge: 60 * 60 * 1000 // node session 1-hour
     }
 }));
+
 //^ Internal DB
 // const db = new pg.Pool({
 //     user: "green_powerdb_user",
